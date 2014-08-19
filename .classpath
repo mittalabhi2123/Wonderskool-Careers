@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/usr/local/google/Projects/Wonderskool/CareerSoftware/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="/usr/local/google/Projects/Wonderskool/CareerSoftware/lib/itextpdf-5.3.2.jar"/>
+	<classpathentry kind="lib" path="/usr/local/google/Projects/Wonderskool/CareerSoftware/lib/mysql-connector-java-5.1.26-bin.jar"/>
+	<classpathentry kind="lib" path="/usr/local/google/Projects/Wonderskool/CareerSoftware/lib/swing-layout-1.0.4.jar"/>
+	<classpathentry kind="lib" path="/usr/local/google/Projects/Wonderskool/CareerSoftware/SaurabhApp"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
