@@ -16,38 +16,39 @@ public abstract interface Const
     public static final String DB_PASSWORD = "DB_PASSWORD";
   }
 
-  public static class Code_Type
-  {
+  public static class Code_Type {
     public static final String MI = "Multiple Intelligences";
     public static final String CMPLX_PERS = "Complex Personality Graph";
     public static final String ABILITY = "Ability Graph";
     public static final String QUALITY = "Quality Graph";
     public static final String MOTIVATORS = "Motivators";
+    public static final String WORKING_STYLE = "Style of Working";
     public static final String COURSE = "Course";
     public static final String COURSE_LEVEL = "Course Level";
     public static final String COURSE_TYPE = "Course Type";
 
-    public static List<String> getLst()
-    {
+    public static List<String> getLst() {
       List<String> dataLst = new ArrayList<String>();
-      dataLst.add("Multiple Intelligences");
-      dataLst.add("Complex Personality Graph");
-      dataLst.add("Ability Graph");
-      dataLst.add("Quality Graph");
-      dataLst.add("Motivators");
-      dataLst.add("Course");
-      dataLst.add("Course Level");
-      dataLst.add("Course Type");
+      dataLst.add(MI);
+      dataLst.add(CMPLX_PERS);
+      dataLst.add(ABILITY);
+      dataLst.add(QUALITY);
+      dataLst.add(MOTIVATORS);
+      dataLst.add(WORKING_STYLE);
+      dataLst.add(COURSE);
+      dataLst.add(COURSE_LEVEL);
+      dataLst.add(COURSE_TYPE);
       return dataLst;
     }
 
     public static List<String> getProfTraitLst() {
-      List dataLst = new ArrayList();
-      dataLst.add("Multiple Intelligences");
-      dataLst.add("Complex Personality Graph");
-      dataLst.add("Ability Graph");
-      dataLst.add("Quality Graph");
-      dataLst.add("Motivators");
+      List<String> dataLst = new ArrayList<String>();
+      dataLst.add(MI);
+      dataLst.add(CMPLX_PERS);
+      dataLst.add(ABILITY);
+      dataLst.add(QUALITY);
+      dataLst.add(MOTIVATORS);
+      dataLst.add(WORKING_STYLE);
       return dataLst;
     }
   }

@@ -38,34 +38,40 @@ public class TraitVariablesLst
   }
 
   public static void initModel() {
-    TableModels.MITableModel.data = new Object[(dataMap.get("Multiple Intelligences")).size()][2];
-    for (int i = 0; i < (dataMap.get("Multiple Intelligences")).size(); i++) {
-      TableModels.MITableModel.data[i][0] = (dataMap.get("Multiple Intelligences")).get(i);
+    TableModels.MITableModel.data = new Object[(dataMap.get(Const.Code_Type.MI)).size()][2];
+    for (int i = 0; i < (dataMap.get(Const.Code_Type.MI)).size(); i++) {
+      TableModels.MITableModel.data[i][0] = (dataMap.get(Const.Code_Type.MI)).get(i);
       TableModels.MITableModel.data[i][1] = null;
     }
 
-    TableModels.CmplxPersTableModel.data = new Object[(dataMap.get("Complex Personality Graph")).size()][2];
-    for (int i = 0; i < (dataMap.get("Complex Personality Graph")).size(); i++) {
-      TableModels.CmplxPersTableModel.data[i][0] = (dataMap.get("Complex Personality Graph")).get(i);
+    TableModels.CmplxPersTableModel.data = new Object[(dataMap.get(Const.Code_Type.CMPLX_PERS)).size()][2];
+    for (int i = 0; i < (dataMap.get(Const.Code_Type.CMPLX_PERS)).size(); i++) {
+      TableModels.CmplxPersTableModel.data[i][0] = (dataMap.get(Const.Code_Type.CMPLX_PERS)).get(i);
       TableModels.CmplxPersTableModel.data[i][1] = null;
     }
 
-    TableModels.AbilityTableModel.data = new Object[(dataMap.get("Ability Graph")).size()][2];
-    for (int i = 0; i < (dataMap.get("Ability Graph")).size(); i++) {
-      TableModels.AbilityTableModel.data[i][0] = (dataMap.get("Ability Graph")).get(i);
+    TableModels.AbilityTableModel.data = new Object[(dataMap.get(Const.Code_Type.ABILITY)).size()][2];
+    for (int i = 0; i < (dataMap.get(Const.Code_Type.ABILITY)).size(); i++) {
+      TableModels.AbilityTableModel.data[i][0] = (dataMap.get(Const.Code_Type.ABILITY)).get(i);
       TableModels.AbilityTableModel.data[i][1] = null;
     }
 
-    TableModels.QualityTableModel.data = new Object[(dataMap.get("Quality Graph")).size()][2];
-    for (int i = 0; i < (dataMap.get("Quality Graph")).size(); i++) {
-      TableModels.QualityTableModel.data[i][0] = (dataMap.get("Quality Graph")).get(i);
+    TableModels.QualityTableModel.data = new Object[(dataMap.get(Const.Code_Type.QUALITY)).size()][2];
+    for (int i = 0; i < (dataMap.get(Const.Code_Type.QUALITY)).size(); i++) {
+      TableModels.QualityTableModel.data[i][0] = (dataMap.get(Const.Code_Type.QUALITY)).get(i);
       TableModels.QualityTableModel.data[i][1] = null;
     }
 
-    TableModels.MotivatorTableModel.data = new Object[dataMap.get("Motivators").size()][2];
-    for (int i = 0; i < (dataMap.get("Motivators")).size(); i++) {
-      TableModels.MotivatorTableModel.data[i][0] = (dataMap.get("Motivators")).get(i);
+    TableModels.MotivatorTableModel.data = new Object[dataMap.get(Const.Code_Type.MOTIVATORS).size()][2];
+    for (int i = 0; i < (dataMap.get(Const.Code_Type.MOTIVATORS)).size(); i++) {
+      TableModels.MotivatorTableModel.data[i][0] = (dataMap.get(Const.Code_Type.MOTIVATORS)).get(i);
       TableModels.MotivatorTableModel.data[i][1] = null;
+    }
+
+    TableModels.WorkingStyleTableModel.data = new Object[dataMap.get(Const.Code_Type.WORKING_STYLE).size()][2];
+    for (int i = 0; i < (dataMap.get(Const.Code_Type.WORKING_STYLE)).size(); i++) {
+      TableModels.WorkingStyleTableModel.data[i][0] = (dataMap.get(Const.Code_Type.WORKING_STYLE)).get(i);
+      TableModels.WorkingStyleTableModel.data[i][1] = null;
     }
   }
 }
