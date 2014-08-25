@@ -341,10 +341,12 @@ public class StudentMarksUpload extends javax.swing.JFrame {
 
 		if (!DBValidateUtility.validUserAccess("upload_marks_write", this.errMsgLbl))
 			return;
-		HashMap miMap = new HashMap();
-		HashMap cmplxPersMap = new HashMap();
-		HashMap abilityMap = new HashMap();
-		HashMap qualityMap = new HashMap();
+		HashMap<String, Integer> miMap = new HashMap<String, Integer>();
+	    HashMap<String, Integer> cmplxPersMap = new HashMap<String, Integer>();
+	    HashMap<String, Integer> abilityMap = new HashMap<String, Integer>();
+	    HashMap<String, Integer> qualityMap = new HashMap<String, Integer>();
+	    HashMap<String, Integer> workingStyleMap = new HashMap<String, Integer>();
+	    HashMap<String, Integer> motivatorsMap = new HashMap<String, Integer>();
 
 		for (int i = 0; i < this.miTbl.getRowCount(); i++) {
 			miMap.put(this.miTbl.getValueAt(i, 0).toString(),
@@ -361,9 +363,20 @@ public class StudentMarksUpload extends javax.swing.JFrame {
 					Integer.valueOf(Utility.parseInteger(this.abilityTbl.getValueAt(i, 1).toString())));
 		}
 
-		for (int i = 0; i < this.qualityTbl.getRowCount(); i++)
+		for (int i = 0; i < this.qualityTbl.getRowCount(); i++) {
 			qualityMap.put(this.qualityTbl.getValueAt(i, 0).toString(),
 					Integer.valueOf(Utility.parseInteger(this.qualityTbl.getValueAt(i, 1).toString())));
+		}
+
+		for (int i = 0; i < this.motivatorTable.getRowCount(); i++) {
+			motivatorsMap.put(this.motivatorTable.getValueAt(i, 0).toString(),
+					Integer.valueOf(Utility.parseInteger(this.motivatorTable.getValueAt(i, 1).toString())));
+		}
+
+		for (int i = 0; i < this.workingStyleTbl.getRowCount(); i++) {
+			workingStyleMap.put(this.workingStyleTbl.getValueAt(i, 0).toString(),
+					Integer.valueOf(Utility.parseInteger(this.workingStyleTbl.getValueAt(i, 1).toString())));
+		}
 		try {
 			if (!Utility.getjdbcconnection(this.errMsgLbl))
 				return;
@@ -371,7 +384,7 @@ public class StudentMarksUpload extends javax.swing.JFrame {
 				Utility.conn.createStatement().executeUpdate(QueryCollection.STUDENT_RESULT.DELETE_EXISTING_DATA);
 			}
 			String result = new StudentMarksExcelReader().read(this.selectedFile.getAbsolutePath(), miMap,
-					cmplxPersMap, abilityMap, qualityMap, this.errMsgLbl);
+					cmplxPersMap, abilityMap, qualityMap, motivatorsMap, workingStyleMap, this.errMsgLbl);
 			if (!Utility.isNullEmpty(result)) {
 				this.jTextArea1.setVisible(true);
 				this.jTextArea1.setText(result);

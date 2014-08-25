@@ -27,8 +27,8 @@ public class CreatePDF
 {
   private static Rectangle rect = null;
 
-  private static HashMap<String, String> resultMap = new HashMap();
-  private static HashMap<String, String> profMap = new HashMap();
+  private static HashMap<String, String> resultMap = new HashMap<String, String>();
+  private static HashMap<String, String> profMap = new HashMap<String, String>();
 
   public static void processFiles(String instName, String enrollNo, JLabel errMsgLbl) throws Exception {
     getProfession(enrollNo, errMsgLbl);
@@ -50,7 +50,7 @@ public class CreatePDF
     rect = Utility.getRectangle(document);
     PdfContentByte cb = writer.getDirectContent();
     for (String key : TraitVariablesLst.dataMap.keySet()) {
-      createGraphRecord(cb, enrollNo, document, key, key, (List)TraitVariablesLst.dataMap.get(key), errMsgLbl);
+      createGraphRecord(cb, enrollNo, document, key, key, TraitVariablesLst.dataMap.get(key), errMsgLbl);
     }
     document.close();
     out.close();
@@ -166,8 +166,8 @@ public class CreatePDF
     document.add(GenerateCharts.getCharts(enrollNo, null, dataLst, title, xAxisName));
     document.add(new Paragraph("\r\n"));
     int counter = 0;
-    if (title.equalsIgnoreCase("Quality Graph")) {
-      for (String criteria : ((String)resultMap.get(title)).split(",")) {
+    if (title.equalsIgnoreCase(Const.Code_Type.QUALITY)) {
+      for (String criteria : (resultMap.get(title)).split(",")) {
         Chunk chunk = new Chunk(++counter + ". " + criteria);
         chunk.setFont(new Font(BaseFont.createFont("Times-BoldItalic", "Cp1252", false), 14.0F, 0));
         document.add(chunk);
@@ -176,7 +176,7 @@ public class CreatePDF
       }
     }
     else {
-      for (String criteria : ((String)resultMap.get(title)).split(",")) {
+      for (String criteria : (resultMap.get(title)).split(",")) {
         String desc = getCodeDesc(title, criteria, errMsgLbl);
         Chunk chunk = new Chunk(criteria);
         chunk.setFont(new Font(BaseFont.createFont("Times-BoldItalic", "Cp1252", false), 14.0F, 4));
@@ -189,7 +189,6 @@ public class CreatePDF
         document.addTitle(enrollNo);
       }
     }
-
     document.newPage();
   }
 }
